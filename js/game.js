@@ -12,12 +12,17 @@ class Game {
       this.gameIsOver = false;
       this.gameIntervalId;
       this.gameLoopFrequency = Math.round(1000/60); // 60fps
+      this.player = new Player(this.gameScreen,200,500,100,150,"./images/car.png");      
     }
+
+     
   
     start() {
       // Set the height and width of the game screen
       this.gameScreen.style.height = `${this.height}px`;
       this.gameScreen.style.width = `${this.width}px`;
+
+      
   
       // Hide the start screen
       this.startScreen.style.display = "none";
@@ -43,6 +48,8 @@ class Game {
     }
   
     update() {
+      this.player.move();
       console.log("in the update");
+      
     }
   }
