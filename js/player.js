@@ -51,20 +51,19 @@ class Player {
         
     }
 
-    didCollide(obstacle){
-        const playerOk = this.element.getBoundingClientRect();
-        const obstacleRec = obstacle.getBoundingClientRect();
-
-        if(
-            playerOk.left < obstacleRec.right &&
-            playerOk.right > obstacleRec.left &&
-            playerOk.top < obstacleRec.bottom &&
-            playerOk.bottom > obstacleRec.top
-        ){
-        return true;
-        }
-        else {
-        return false;
+    didCollide(obstacle) {
+        const playerRect = this.element.getBoundingClientRect();
+        const obstacleRect = obstacle.element.getBoundingClientRect();
+    
+        if (
+          playerRect.left < obstacleRect.right &&
+          playerRect.right > obstacleRect.left &&
+          playerRect.top < obstacleRect.bottom &&
+          playerRect.bottom > obstacleRect.top
+        ) {
+          return true;
+        } else {
+          return false;
         }
     }
 }

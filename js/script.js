@@ -7,12 +7,26 @@ window.onload = function () {
     startGame();
   });
 
+  restartButton.addEventListener("click",function(){
+    restartGame();
+  });
+
+  
   function startGame() {
     console.log("start game");
     game = new Game(); 
 
     game.start(); 
   }
+
+function restartGame(){
+  location.reload();
+
+};
+
+
+
+
   function handleKeydown(event) {
     const key = event.key;
     const possibleKeystrokes = [
